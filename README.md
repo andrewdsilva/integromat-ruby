@@ -1,10 +1,10 @@
 # Integromat (Make) Ruby
 
-<span>[![Gem Version](https://img.shields.io/gem/v/integromat-ruby.svg?label=integromat-ruby&colorA=D30001&colorB=DF3B3C)](https://rubygems.org/gems/integromat-ruby)</span> <span>
+<span>[![Gem Version](https://img.shields.io/gem/v/integromat.svg?label=integromat&colorA=D30001&colorB=DF3B3C)](https://rubygems.org/gems/integromat)</span> <span>
 [![ruby](https://img.shields.io/badge/ruby-2.6+%20*-ruby.svg?colorA=D30001&colorB=DF3B3C)](https://github.com/andrewdsilva/integromat-ruby)</span> <span>
 ![Rubocop Status](https://img.shields.io/badge/rubocop-passing-rubocop.svg?colorA=1f7a1f&colorB=2aa22a)</span> <span>
 [![MIT license](https://img.shields.io/badge/license-MIT-mit.svg?colorA=1f7a1f&colorB=2aa22a)](http://opensource.org/licenses/MIT)</span> <span>
-![Downloads](https://img.shields.io/gem/dt/integromat-ruby.svg?colorA=004d99&colorB=0073e6)</span>
+![Downloads](https://img.shields.io/gem/dt/integromat.svg?colorA=004d99&colorB=0073e6)</span>
 
 Integromat is a powerful automation platform that enables you to connect and automate various applications and services. One of the key features of Integromat is the ability to utilize webhooks, which allow you to send data to Integromat over HTTP. Webhooks act as instant triggers, allowing you to execute scenarios immediately upon receiving a request at the webhook URL.
 
