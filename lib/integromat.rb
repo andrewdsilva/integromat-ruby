@@ -1,7 +1,10 @@
 # frozen_string_literal: true
 
 require "integromat/version"
+require "integromat/exceptions"
 require "integromat/config"
+require "integromat/base"
+require "integromat/webhook"
 
 module Integromat
   class Error < StandardError; end
