@@ -35,7 +35,7 @@ TODO ...
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/andrewdsomva/integromat-ruby.
+Bug reports and pull requests are welcome on GitHub at https://github.com/andrewdsilva/integromat-ruby.
 
 ## License
 
