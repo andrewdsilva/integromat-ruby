@@ -3,7 +3,7 @@ module Integromat
     attr_accessor :hook_ref
 
     def initialize(hook_ref, hook_id = nil)
-      super
+      super()
 
       self.hook_ref = hook_ref
 

@@ -1,3 +1,5 @@
+require "faraday"
+
 module Integromat
   class Base
     def post_hook(data)
@@ -9,10 +11,10 @@ module Integromat
     end
 
     def api
-      @api ||= Faraday.new(url: api_url) do |faraday|
+      @api ||= ::Faraday.new(url: api_url) do |faraday|
         faraday.request :json
         faraday.response :logger, ::Logger.new($stdout), bodies: true
-        faraday.adapter Faraday.default_adapter
+        faraday.adapter ::Faraday.default_adapter
       end
     end
 

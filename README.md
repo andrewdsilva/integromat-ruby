@@ -20,7 +20,7 @@ To start using Integromat-Ruby, you'll need an Integromat account and a created 
 To install the gem add it into a Gemfile (Bundler):
 
 ```ruby
-gem 'integromat'
+gem "integromat"
 ```
 
 And then execute:
@@ -40,9 +40,13 @@ Integromat.configure do |c|
   c.web_hooks = { user_register: "webhook_id" }
 
   # Override the base URI
-  c.base_uri = "https://hook.make.com"
+  c.base_uri = "https://hook.eu2.make.com"
 end
 ```
+
+To obtain the base URL and hook ID, please look at the webhook URL you created in the Integromat application (Make).
+
+![Webhook module on make](./images/make-screenshot.png)
 
 Create an instance of `Webhook` for the desired hook, and use the `trigger` method to send a hash of parameters to the Integromat (Make) webhook. The `trigger` method returns `true` if the hook is successfully posted.
 
@@ -55,6 +59,35 @@ else
   pp "Hook not triggered !"
 end
 ```
+
+## Use Integromat on your Rails application
+
+If you are using Integromat with Rails, I recommend creating an initializer file (e.g., `config/initializers/integromat.rb`) and adding the following code:
+
+```ruby
+Integromat.configure do |c|
+  c.web_hooks = { user_register: "webhook_id" }
+
+  # Override the base URI
+  c.base_uri = "https://hook.eu2.make.com"
+end
+```
+
+### Example
+
+Suppose you want to call the webhook every time a user signs up for your application. You can use the `trigger` method from the Integromat gem within a callback on your `User` model.
+
+```ruby
+class User < ApplicationRecord
+  after_create :notify_registration
+
+  def notify_registration
+    Integromat::Webhook.new(:user_registration).trigger(email: email)
+  end
+end
+```
+
+This code sets up an `after_create` callback on the `User` model, which calls the `notify_registration` method. Inside this method, the `Integromat::Webhook.new(:user_registration)` creates a new webhook instance for the "user_registration" hook. The `trigger` method is then used to ping the webhook.
 
 ## Contributing
 

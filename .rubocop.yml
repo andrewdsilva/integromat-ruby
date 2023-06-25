@@ -38,3 +38,5 @@ Layout/ArrayAlignment:
   EnforcedStyle: with_fixed_indentation
 Style/ClassVars:
   Enabled: false
+Metrics/BlockLength:
+  Max: 2000

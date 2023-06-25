@@ -7,6 +7,10 @@ require "integromat/base"
 require "integromat/webhook"
 
 module Integromat
+  class << self
+    attr_accessor :config
+  end
+
   class Error < StandardError; end
 
   def self.configure
