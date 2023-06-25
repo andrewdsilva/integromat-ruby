@@ -31,7 +31,30 @@ bundle install
 
 ## Usage
 
-TODO ...
+To use integromat, start by configuring it with a hash of the webhooks you want to integrate. You can also customize the base URI.
+
+```ruby
+require "integromat"
+
+Integromat.configure do |c|
+  c.web_hooks = { user_register: "webhook_id" }
+
+  # Override the base URI
+  c.base_uri = "https://hook.make.com"
+end
+```
+
+Create an instance of `Webhook` for the desired hook, and use the `trigger` method to send a hash of parameters to the Integromat (Make) webhook. The `trigger` method returns `true` if the hook is successfully posted.
+
+```ruby
+hook = Integromat::Webhook.new(:user_register)
+
+if hook.trigger({ username: "andrewdsilva" })
+  pp "Hook triggered !"
+else
+  pp "Hook not triggered !"
+end
+```
 
 ## Contributing
 
