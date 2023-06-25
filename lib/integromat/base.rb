@@ -16,13 +16,6 @@ module Integromat
       end
     end
 
-    def zap_headers
-      {
-        "Accept" => " application/json",
-        "Content-Type" => "application/json"
-      }
-    end
-
     def api_url
       config.base_uri.to_s
     end
